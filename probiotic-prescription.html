@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nutri-MX Probiotic Premium – Συνταγολόγιο</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#eef1f4;font-family:Arial,Helvetica,sans-serif;color:#1f2937}
+  .toolbar{position:sticky;top:0;z-index:20;padding:12px;text-align:center;background:#203f5d;box-shadow:0 2px 8px rgba(0,0,0,.16)}
+  .toolbar button{border:0;border-radius:9px;background:#fff;color:#203f5d;font-weight:700;font-size:14px;padding:11px 20px;cursor:pointer}
+  .hint{display:block;margin-top:6px;color:#dce8f2;font-size:11px}
+  .sheet{position:relative;width:148mm;height:210mm;margin:18px auto;background:#fff;box-shadow:0 4px 22px rgba(0,0,0,.16);overflow:hidden}
+  .sheet>img{display:block;width:100%;height:100%;object-fit:fill}
+  .selected{position:absolute;left:9mm;right:9mm;top:148mm;height:10mm;background:#fff;display:flex;align-items:center;padding:0 3mm;font-size:10.5pt;font-weight:700}
+  .check{width:5mm;height:5mm;border:1.4px solid #222;margin-right:3mm;position:relative;flex:0 0 5mm}
+  .check:after{content:"";position:absolute;left:1.2mm;top:.1mm;width:1.8mm;height:3.3mm;border:solid #16784f;border-width:0 .8mm .8mm 0;transform:rotate(45deg)}
+  .rxline{flex:1}
+  .sub{font-size:7.5pt;color:#64748b;font-weight:400;margin-left:3mm}
+  @page{size:A5 portrait;margin:0}
+  @media print{
+    html,body{background:#fff}
+    .toolbar{display:none!important}
+    .sheet{width:148mm;height:210mm;margin:0;box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button type="button" onclick="window.print()">Εκτυπώστε το συνταγολόγιο / Αποθήκευση PDF</button>
+  <span class="hint">Μέγεθος σελίδας: A5 — μισή A4</span>
+</div>
+
+<div class="sheet">
+  <img src="https://raw.githubusercontent.com/pzaro/zarkolia-images/main/Prescription%20Neo.jpg" alt="Zarkolia Health Συνταγολόγιο">
+  <div class="selected">
+    <span class="check"></span>
+    <span class="rxline">Nutri-MX Probiotic Premium — 30 caps</span>
+    <span class="sub">✓ επιλεγμένο</span>
+  </div>
+</div>
+
+<script>
+window.addEventListener('load', function(){
+  const p = new URLSearchParams(location.search);
+  if (p.get('auto') === '1') setTimeout(function(){ window.print(); }, 700);
+});
+</script>
+</body>
+</html>
